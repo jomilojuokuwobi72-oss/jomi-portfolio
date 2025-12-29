@@ -1,16 +1,15 @@
 // components/AboutSection.tsx
 import Image from "next/image";
+import { Brain, Eye } from "lucide-react";
 
 const techLeft = ["Python", "React.js", "JavaScript (ES6+)"];
 const techRight = ["TypeScript", "Node.js", "SQL"];
 
-// Replace these src values with your actual filenames in /public (case-sensitive on Vercel).
-// I left coffee.JPG in place since that's what you showed.
 const vibeIcons = [
   { src: "/coffee.JPG", alt: "Coffee", rotate: "-rotate-6" },
-  { src: "/guitar.JPEG", alt: "Soccer", rotate: "rotate-3" },
+  { src: "/guitar.JPEG", alt: "Music", rotate: "rotate-3" },
   { src: "/coffee2.JPG", alt: "Gym", rotate: "-rotate-3" },
-  { src: "/image6.JPG", alt: "Music", rotate: "rotate-6" },
+  { src: "/image6.JPG", alt: "Lifestyle", rotate: "rotate-6" },
 ];
 
 export default function AboutSection() {
@@ -20,7 +19,7 @@ export default function AboutSection() {
         {/* LEFT */}
         <div className="lg:pr-6">
           <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
-            {/* Bigger profile image */}
+            {/* Profile image */}
             <div className="relative h-40 w-40 sm:h-44 sm:w-44 lg:h-56 lg:w-56">
               <Image
                 src="/Jomi2.JPG"
@@ -36,7 +35,7 @@ export default function AboutSection() {
             </h2>
 
             <p className="mt-3 max-w-xl text-[15px] sm:text-base lg:text-lg leading-7 text-[rgb(var(--muted))]">
-              Full-stack Software Engineer based in Austin TX.
+              Full-stack Software Engineer based in Austin, TX.
             </p>
 
             {/* Tech chips */}
@@ -51,7 +50,7 @@ export default function AboutSection() {
               ))}
             </div>
 
-            {/* 4 images under tech chips (slanted + hover straighten) */}
+            {/* Lifestyle images */}
             <div className="mt-5 flex items-center justify-center gap-3 lg:justify-start">
               {vibeIcons.map((img) => (
                 <div
@@ -91,26 +90,54 @@ export default function AboutSection() {
           {/* Content */}
           <div className="mt-6 space-y-6">
             <p className="text-[15px] sm:text-base lg:text-lg leading-8 text-[rgb(var(--muted))]">
-              I’m a{" "}
+              Hi, Jomi here! I’m a{" "}
               <span className="text-[rgb(var(--fg))] font-semibold">
                 full-stack software engineer
               </span>{" "}
-              who builds products that feel simple on the surface and solid underneath.
-              I enjoy working across the entire lifecycle — from shaping UX and APIs to
-              implementing reliable systems and shipping to production.
+              who enjoys building products that feel simple on the surface and solid
+              underneath. I like working across the entire lifecycle — from shaping UX
+              and APIs to implementing reliable systems and shipping to production.
             </p>
 
             <p className="text-[15px] sm:text-base lg:text-lg leading-8 text-[rgb(var(--muted))]">
-              I’m especially comfortable in modern web stacks like{" "}
-              <span className="text-[rgb(var(--fg))] font-semibold">Next.js</span> and{" "}
-              <span className="text-[rgb(var(--fg))] font-semibold">Tailwind</span>,
-              integrating APIs, and working with databases and cloud services. I care
-              deeply about clarity — in naming, layout, error states, and interaction
-              details.
+              I’m a{" "}
+              <span className="text-[rgb(var(--fg))] font-semibold">
+                Software Developer at Charles Schwab
+              </span>{" "}
+              and a recent graduate from the{" "}
+              <span className="text-[rgb(var(--fg))] font-semibold">
+                University of Texas at Arlington
+              </span>{" "}
+              (Fall 2025). Lately, I’ve been exploring{" "}
+              <span className="text-[rgb(var(--fg))] font-semibold">
+                machine learning
+              </span>{" "}
+              and{" "}
+              <span className="text-[rgb(var(--fg))] font-semibold">
+                computer vision
+              </span>{" "}
+              as areas of growing interest.
+            </p>
+
+            {/* ML / CV icons */}
+            <div className="flex items-center gap-8 pt-2 text-[rgb(var(--muted))]">
+              <div className="flex items-center gap-2">
+                <Brain className="h-5 w-5 text-[rgb(var(--fg))]" />
+                <span className="text-sm sm:text-base">Machine Learning</span>
+              </div>
+
+              <div className="flex items-center gap-2">
+                <Eye className="h-5 w-5 text-[rgb(var(--fg))]" />
+                <span className="text-sm sm:text-base">Computer Vision</span>
+              </div>
+            </div>
+
+            <p className="pt-4 text-[15px] sm:text-base lg:text-lg leading-8 text-[rgb(var(--muted))]">
+              Here are some of the technologies I’ve been working with:
             </p>
 
             {/* Tech list */}
-            <div className="mt-6 grid gap-6 sm:grid-cols-2">
+            <div className="mt-4 grid gap-6 sm:grid-cols-2">
               <TechList items={techLeft} />
               <TechList items={techRight} />
             </div>
