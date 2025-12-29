@@ -119,25 +119,25 @@ export default function AboutSection() {
               as areas of growing interest.
             </p>
 
-            {/* ML / CV icons */}
-            <div className="flex items-center gap-8 pt-2 text-[rgb(var(--muted))]">
-              <div className="flex items-center gap-2">
-                <Brain className="h-5 w-5 text-[rgb(var(--fg))]" />
-                <span className="text-sm sm:text-base">Machine Learning</span>
-              </div>
+            {/* ML / CV as single inline "icon + text" pills (no duplicate labels) */}
+            <div className="flex flex-wrap items-center gap-3 pt-1">
+              <span className="inline-flex items-center gap-2 rounded-full px-3 py-1.5 bg-[rgb(var(--chip))] ring-1 ring-[rgb(var(--border))] text-sm text-[rgb(var(--muted))]">
+                <Brain className="h-4 w-4 text-[rgb(var(--fg))] opacity-80" />
+                Machine Learning
+              </span>
 
-              <div className="flex items-center gap-2">
-                <Eye className="h-5 w-5 text-[rgb(var(--fg))]" />
-                <span className="text-sm sm:text-base">Computer Vision</span>
-              </div>
+              <span className="inline-flex items-center gap-2 rounded-full px-3 py-1.5 bg-[rgb(var(--chip))] ring-1 ring-[rgb(var(--border))] text-sm text-[rgb(var(--muted))]">
+                <Eye className="h-4 w-4 text-[rgb(var(--fg))] opacity-80" />
+                Computer Vision
+              </span>
             </div>
 
-            <p className="pt-4 text-[15px] sm:text-base lg:text-lg leading-8 text-[rgb(var(--muted))]">
+            <p className="pt-2 text-[15px] sm:text-base lg:text-lg leading-8 text-[rgb(var(--muted))]">
               Here are some of the technologies I’ve been working with:
             </p>
 
             {/* Tech list */}
-            <div className="mt-4 grid gap-6 sm:grid-cols-2">
+            <div className="mt-2 grid gap-6 sm:grid-cols-2">
               <TechList items={techLeft} />
               <TechList items={techRight} />
             </div>
