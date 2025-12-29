@@ -12,21 +12,16 @@ export default function Home() {
   return (
     <main className="min-h-screen">
       <Navbar />
+      {/* Wider container on desktop so proportions match your inspiration */}
+      <div className="mx-auto max-w-6xl px-4 py-10 sm:py-14">
 
-      {/* Content */}
-      <div className="mx-auto max-w-2xl px-4 py-10 sm:py-14">
-        {/* About (component) */}
+        {/* About */}
         <AboutSection />
 
-        {/* Divider */}
-        <div className="my-10 sm:my-12 h-px bg-[rgb(var(--border))]" />
-
-
-        {/* Divider */}
         <div className="my-10 sm:my-12 h-px bg-[rgb(var(--border))]" />
 
         {/* Projects */}
-        <section id="projects" className="scroll-mt-24">
+        <section id="projects">
           <div className="flex items-center justify-between gap-4">
             <h2 className="text-xl font-semibold">Projects</h2>
             <a
@@ -53,13 +48,11 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Divider */}
         <div className="my-10 sm:my-12 h-px bg-[rgb(var(--border))]" />
 
         {/* Experience */}
-        <section id="experience" className="scroll-mt-24">
+        <section id="experience">
           <h2 className="text-xl font-semibold">Experience</h2>
-
           <div className="mt-6 space-y-6">
             <ExperienceRow
               role="Software Engineer"
@@ -79,40 +72,13 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Divider */}
-        <div className="my-10 sm:my-12 h-px bg-[rgb(var(--border))]" />
-
-        {/* More than coding */}
-        <section id="more" className="scroll-mt-24">
-          <h2 className="text-xl font-semibold">More than coding</h2>
-
-          <div className="mt-5 rounded-2xl bg-[rgb(var(--card))] ring-1 ring-[rgb(var(--border))] p-5">
-            <div className="font-mono text-sm text-[rgb(var(--muted))]">
-              <div className="flex items-center justify-between">
-                <span>
-                  <span className="text-[rgb(var(--accent))]">00.</span> life
-                </span>
-                <span className="text-[rgb(var(--accent))]">•</span>
-              </div>
-
-              <div className="mt-4 space-y-2">
-                <MonoLine label="hobby" value="soccer + gym" />
-                <MonoLine label="reading" value="non-fiction + tech" />
-                <MonoLine label="music" value="Spotify stats (later)" />
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Divider */}
         <div className="my-10 sm:my-12 h-px bg-[rgb(var(--border))]" />
 
         {/* Contact */}
-        <section id="contact" className="scroll-mt-24">
+        <section id="contact">
           <h2 className="text-xl font-semibold">Contact</h2>
           <p className="mt-4 text-[15px] leading-7 text-[rgb(var(--muted))]">
-            Best way to reach me is email. You can also find me on GitHub and LinkedIn
-            above.
+            Best way to reach me is email. You can also find me on GitHub and LinkedIn above.
           </p>
         </section>
 
@@ -180,15 +146,6 @@ function ExperienceRow({
           <li key={b}>{b}</li>
         ))}
       </ul>
-    </div>
-  );
-}
-
-function MonoLine({ label, value }: { label: string; value: string }) {
-  return (
-    <div className="flex gap-3">
-      <span className="w-20 text-[rgb(var(--accent))]">{label}</span>
-      <span className="text-[rgb(var(--muted))]">{value}</span>
     </div>
   );
 }
