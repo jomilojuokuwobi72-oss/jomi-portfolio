@@ -1,5 +1,6 @@
-import ThemeToggle from "@/components/ThemeToggle";
-import LiveClock from "@/components/LiveClock";
+// app/page.tsx
+import Navbar from "@/components/Navbar";
+import AboutSection from "@/components/AboutSection";
 
 const social = [
   { label: "GitHub", href: "https://github.com/" },
@@ -10,62 +11,32 @@ const social = [
 export default function Home() {
   return (
     <main className="min-h-screen">
-      {/* Top bar */}
-      <header className="sticky top-0 z-10 bg-[rgb(var(--bg))]/80 backdrop-blur border-b border-[rgb(var(--border))]">
-        <div className="mx-auto max-w-2xl px-4 py-3 flex items-center justify-between">
-          <div className="text-sm font-mono text-[rgb(var(--muted))]">
-            <span className="text-[rgb(var(--fg))] font-semibold">JOMI</span>
-            <span className="mx-2">/</span>
-            <LiveClock />
-          </div>
-          <ThemeToggle />
-        </div>
-      </header>
+      <Navbar />
 
       {/* Content */}
       <div className="mx-auto max-w-2xl px-4 py-10 sm:py-14">
-        {/* Hero */}
-        <section className="text-center">
-          <div className="mx-auto h-20 w-20 rounded-full bg-[rgb(var(--chip))] ring-1 ring-[rgb(var(--border))]" />
-          <h1 className="mt-5 text-3xl sm:text-4xl font-semibold tracking-tight">
-            Jomi Okuwobi
-          </h1>
-
-          <p className="mt-4 text-[15px] sm:text-base leading-7 text-[rgb(var(--muted))]">
-            I build clean, reliable products with strong UX. I like shipping end-to-end:
-            design → implementation → deployment.
-          </p>
-
-          {/* Social “chips” (like Josh) */}
-          <div className="mt-6 flex flex-wrap justify-center gap-2">
-            {social.map((s) => (
-              <a
-                key={s.label}
-                href={s.href}
-                className="rounded-full px-4 py-2 text-sm ring-1 ring-[rgb(var(--border))] bg-[rgb(var(--card))] hover:opacity-90 transition"
-              >
-                {s.label}
-              </a>
-            ))}
-          </div>
-        </section>
+        {/* About (component) */}
+        <AboutSection />
 
         {/* Divider */}
         <div className="my-10 sm:my-12 h-px bg-[rgb(var(--border))]" />
 
-        {/* Projects header row */}
-        <section>
+
+        {/* Divider */}
+        <div className="my-10 sm:my-12 h-px bg-[rgb(var(--border))]" />
+
+        {/* Projects */}
+        <section id="projects" className="scroll-mt-24">
           <div className="flex items-center justify-between gap-4">
             <h2 className="text-xl font-semibold">Projects</h2>
             <a
-              href="#"
+              href="#projects"
               className="text-sm rounded-full px-3 py-1.5 ring-1 ring-[rgb(var(--border))] bg-[rgb(var(--card))] hover:opacity-90 transition"
             >
               View all →
             </a>
           </div>
 
-          {/* Clean list style (like Josh) */}
           <div className="mt-6 space-y-5">
             <ProjectRow
               title="Sports Injury Insight & Prevention"
@@ -86,7 +57,7 @@ export default function Home() {
         <div className="my-10 sm:my-12 h-px bg-[rgb(var(--border))]" />
 
         {/* Experience */}
-        <section>
+        <section id="experience" className="scroll-mt-24">
           <h2 className="text-xl font-semibold">Experience</h2>
 
           <div className="mt-6 space-y-6">
@@ -103,9 +74,7 @@ export default function Home() {
               role="Software Engineering Intern"
               org="Sony Interactive Entertainment"
               date="2023"
-              bullets={[
-                "Shipped automation that reduced manual release work substantially.",
-              ]}
+              bullets={["Shipped automation that reduced manual release work substantially."]}
             />
           </div>
         </section>
@@ -113,8 +82,8 @@ export default function Home() {
         {/* Divider */}
         <div className="my-10 sm:my-12 h-px bg-[rgb(var(--border))]" />
 
-        {/* Terminal/mono section like BRM, but optional + tasteful */}
-        <section>
+        {/* More than coding */}
+        <section id="more" className="scroll-mt-24">
           <h2 className="text-xl font-semibold">More than coding</h2>
 
           <div className="mt-5 rounded-2xl bg-[rgb(var(--card))] ring-1 ring-[rgb(var(--border))] p-5">
@@ -133,6 +102,18 @@ export default function Home() {
               </div>
             </div>
           </div>
+        </section>
+
+        {/* Divider */}
+        <div className="my-10 sm:my-12 h-px bg-[rgb(var(--border))]" />
+
+        {/* Contact */}
+        <section id="contact" className="scroll-mt-24">
+          <h2 className="text-xl font-semibold">Contact</h2>
+          <p className="mt-4 text-[15px] leading-7 text-[rgb(var(--muted))]">
+            Best way to reach me is email. You can also find me on GitHub and LinkedIn
+            above.
+          </p>
         </section>
 
         <footer className="mt-14 text-center text-sm text-[rgb(var(--muted))]">
