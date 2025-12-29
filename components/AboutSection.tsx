@@ -13,7 +13,7 @@ export default function AboutSection() {
           <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
             <div className="relative h-36 w-36 sm:h-40 sm:w-40 lg:h-48 lg:w-48">
               <Image
-                src="/Jomi2.jpg"
+                src="/Jomi2.JPG"
                 alt="Jomi Okuwobi"
                 fill
                 className="rounded-full object-cover ring-1 ring-[rgb(var(--border))]"
