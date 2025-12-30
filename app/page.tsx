@@ -1,6 +1,7 @@
 // app/page.tsx
 import Navbar from "@/components/Navbar";
 import AboutSection from "@/components/AboutSection";
+import TravelMap from "@/components/TravelMap";
 
 const social = [
   { label: "GitHub", href: "https://github.com/" },
@@ -17,6 +18,8 @@ export default function Home() {
 
         {/* About */}
         <AboutSection />
+
+
 
         <div className="my-10 sm:my-12 h-px bg-[rgb(var(--border))]" />
 
@@ -71,6 +74,15 @@ export default function Home() {
             />
           </div>
         </section>
+
+        <div className="my-10 sm:my-12 h-px bg-[rgb(var(--border))]" />
+
+        {/* Travel */}
+        <section id="travel">
+          <TravelMap />
+        </section>
+
+        <div className="my-10 sm:my-12 h-px bg-[rgb(var(--border))]" />
 
         <div className="my-10 sm:my-12 h-px bg-[rgb(var(--border))]" />
 
