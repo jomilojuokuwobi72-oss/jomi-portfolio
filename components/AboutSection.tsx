@@ -38,16 +38,32 @@ export default function AboutSection() {
               Full-stack Software Engineer based in Austin, TX.
             </p>
 
-            {/* Tech chips */}
-            <div className="mt-5 flex flex-wrap justify-center gap-2 lg:justify-start lg:max-w-xl">
-              {["Next.js", "React", "Node", "Postgres", "Tailwind", "AWS"].map((t) => (
-                <span
-                  key={t}
-                  className="text-xs sm:text-sm rounded-full px-3 py-1.5 bg-[rgb(var(--chip))] ring-1 ring-[rgb(var(--border))]"
-                >
-                  {t}
-                </span>
-              ))}
+            {/* Interests (replaces tech stack chips) */}
+            <div className="mt-5 flex flex-wrap justify-center gap-3 lg:justify-start lg:max-w-xl">
+              <span className="inline-flex items-center gap-2 rounded-full px-3 py-1.5 bg-[rgb(var(--chip))] ring-1 ring-[rgb(var(--border))] text-sm text-[rgb(var(--muted))] hover:-translate-y-0.5 transition-transform">
+                <Brain className="h-4 w-4 text-[rgb(var(--fg))] opacity-80" />
+                Machine Learning
+              </span>
+
+              <span className="inline-flex items-center gap-2 rounded-full px-3 py-1.5 bg-[rgb(var(--chip))] ring-1 ring-[rgb(var(--border))] text-sm text-[rgb(var(--muted))] hover:-translate-y-0.5 transition-transform">
+                <Eye className="h-4 w-4 text-[rgb(var(--fg))] opacity-80" />
+                Computer Vision
+              </span>
+
+              <span className="inline-flex items-center gap-2 rounded-full px-3 py-1.5 bg-[rgb(var(--chip))] ring-1 ring-[rgb(var(--border))] text-sm text-[rgb(var(--muted))] hover:-translate-y-0.5 transition-transform">
+                <span className="font-mono text-[rgb(var(--fg))] opacity-80">⚙</span>
+                CI/CD
+              </span>
+
+              <span className="inline-flex items-center gap-2 rounded-full px-3 py-1.5 bg-[rgb(var(--chip))] ring-1 ring-[rgb(var(--border))] text-sm text-[rgb(var(--muted))] hover:-translate-y-0.5 transition-transform">
+                <span className="font-mono text-[rgb(var(--fg))] opacity-80">✦</span>
+                UX / UI
+              </span>
+
+              <span className="inline-flex items-center gap-2 rounded-full px-3 py-1.5 bg-[rgb(var(--chip))] ring-1 ring-[rgb(var(--border))] text-sm text-[rgb(var(--muted))] hover:-translate-y-0.5 transition-transform">
+                <span className="font-mono text-[rgb(var(--fg))] opacity-80">⌘</span>
+                Programming
+              </span>
             </div>
 
             {/* Lifestyle images */}
@@ -100,7 +116,7 @@ export default function AboutSection() {
             </p>
 
             <p className="text-[15px] sm:text-base lg:text-lg leading-8 text-[rgb(var(--muted))]">
-              I’m a{" "}
+              I’m currently a{" "}
               <span className="text-[rgb(var(--fg))] font-semibold">
                 Software Developer at Charles Schwab
               </span>{" "}
@@ -119,18 +135,7 @@ export default function AboutSection() {
               as areas of growing interest.
             </p>
 
-            {/* ML / CV as single inline "icon + text" pills (no duplicate labels) */}
-            <div className="flex flex-wrap items-center gap-3 pt-1">
-              <span className="inline-flex items-center gap-2 rounded-full px-3 py-1.5 bg-[rgb(var(--chip))] ring-1 ring-[rgb(var(--border))] text-sm text-[rgb(var(--muted))]">
-                <Brain className="h-4 w-4 text-[rgb(var(--fg))] opacity-80" />
-                Machine Learning
-              </span>
-
-              <span className="inline-flex items-center gap-2 rounded-full px-3 py-1.5 bg-[rgb(var(--chip))] ring-1 ring-[rgb(var(--border))] text-sm text-[rgb(var(--muted))]">
-                <Eye className="h-4 w-4 text-[rgb(var(--fg))] opacity-80" />
-                Computer Vision
-              </span>
-            </div>
+          
 
             <p className="pt-2 text-[15px] sm:text-base lg:text-lg leading-8 text-[rgb(var(--muted))]">
               Here are some of the technologies I’ve been working with:
