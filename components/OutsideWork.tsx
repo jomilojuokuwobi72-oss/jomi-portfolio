@@ -196,9 +196,9 @@ export default function OutsideWork() {
 
         <div className="mt-8 flex flex-wrap justify-center gap-8 md:justify-start">
           <Polaroid src="/guitar.JPEG" location="Arlington, TX" rotateClass="-rotate-2" />
-          <Polaroid src="/image1.jpg" location="Dallas, TX" rotateClass="rotate-1" />
+          <Polaroid src="/image1.JPG" location="Dallas, TX" rotateClass="rotate-1" />
           <Polaroid src="/sites2.JPG" location="California, San Diego" rotateClass="-rotate-1" />
-          <Polaroid src="/sites1.JPG" location="Chicago" rotateClass="rotate-2" />
+          <Polaroid src="/sites1.jpg" location="Chicago" rotateClass="rotate-2" />
           <Polaroid src="/sites3.JPG" location="California, San Diego" rotateClass="-rotate-1" />
         </div>
       </div>
