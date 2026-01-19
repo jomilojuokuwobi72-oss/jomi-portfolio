@@ -35,7 +35,7 @@ export default function AboutSection() {
             </h2>
 
             <p className="mt-3 max-w-xl text-[15px] sm:text-base lg:text-lg leading-7 text-[rgb(var(--muted))]">
-              Full-stack Software Engineer based in Austin, TX.
+              Indulging My Curiousity
             </p>
 
             {/* Interests (replaces tech stack chips) */}
@@ -110,7 +110,9 @@ export default function AboutSection() {
               <span className="text-[rgb(var(--fg))] font-semibold">
                 full-stack software engineer
               </span>{" "}
-              who enjoys building products that feel simple on the surface and solid
+              based in <span className="text-[rgb(var(--fg))] font-semibold">
+                Austin, TX
+              </span>{" "}. I enjoy building products that feel simple on the surface and solid
               underneath. I like working across the entire lifecycle — from shaping UX
               and APIs to implementing reliable systems and shipping to production.
             </p>
