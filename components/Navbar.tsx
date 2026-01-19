@@ -155,6 +155,7 @@ export default function Navbar() {
           aria-modal="true"
           aria-labelledby="contact-modal-title"
         >
+          {/* Backdrop */}
           <button
             type="button"
             aria-label="Close contact modal"
@@ -162,20 +163,24 @@ export default function Navbar() {
             className="absolute inset-0 bg-black/50"
           />
 
+          {/* Panel */}
           <div className="relative w-full max-w-lg rounded-2xl bg-[rgb(var(--card))] ring-1 ring-[rgb(var(--border))] p-6 shadow-lg">
-            <div className="flex items-start gap-4">
-              <div className="relative h-14 w-14 rounded-2xl overflow-hidden ring-1 ring-[rgb(var(--border))] bg-[rgb(var(--bg))]">
+            {/* IMPORTANT: stack on mobile, row on sm+ */}
+            <div className="flex flex-col sm:flex-row sm:items-start items-center sm:items-start gap-4">
+              {/* Centered image on mobile */}
+              <div className="relative h-16 w-16 sm:h-14 sm:w-14 rounded-2xl overflow-hidden ring-1 ring-[rgb(var(--border))] bg-[rgb(var(--bg))] mx-auto sm:mx-0">
                 <Image
                   src="/Jomi3.JPG"
                   alt="Jomi Okuwobi"
                   fill
                   className="object-cover"
-                  sizes="56px"
+                  sizes="64px"
                   priority
                 />
               </div>
 
-              <div className="flex-1">
+              {/* Text/content: centered on mobile, left on sm+ */}
+              <div className="flex-1 text-center sm:text-left">
                 <h3
                   id="contact-modal-title"
                   className="text-lg font-semibold tracking-tight"
@@ -209,13 +214,16 @@ export default function Navbar() {
                 </div>
               </div>
 
-              <button
-                type="button"
-                onClick={() => setContactOpen(false)}
-                className="rounded-full px-3 py-1.5 text-sm ring-1 ring-[rgb(var(--border))] hover:opacity-90 transition"
-              >
-                Close
-              </button>
+              {/* Close button: full-width on mobile, corner-ish on sm+ */}
+              <div className="w-full sm:w-auto sm:ml-2">
+                <button
+                  type="button"
+                  onClick={() => setContactOpen(false)}
+                  className="w-full sm:w-auto rounded-full px-3 py-1.5 text-sm ring-1 ring-[rgb(var(--border))] hover:opacity-90 transition"
+                >
+                  Close
+                </button>
+              </div>
             </div>
           </div>
         </div>
