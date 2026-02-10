@@ -61,7 +61,38 @@ export default function Home() {
 
         <div className="my-10 sm:my-12 h-px bg-[rgb(var(--border))]" />
 
-        {/* Projects */}
+    
+
+        {/* Experience */}
+        <section id="experience">
+          <h2 className="text-xl font-semibold">Experience</h2>
+
+          <div className="mt-6 space-y-5">
+            <ExperienceCard
+              role="Software Engineer"
+              org="Charles Schwab"
+              date="2025 — Present"
+              bullets={[
+                "Working as a Software Developer focused on observability and reliability for large-scale distributed systems across on-prem and cloud environments, building Python-based telemetry pipelines that transformed infrastructure and service metrics into production dashboards and alerts using Grafana, Splunk, OpenTelemetry, and Wavefront.",
+              ]}
+              tags={["Python", "Observability", "Grafana", "Splunk", "Wavefront"]}
+            />
+
+            <ExperienceCard
+              role="AI Model Trainer"
+              org="Outlier AI"
+              date="2024"
+              bullets={[
+                "Contributed to the training, evaluation, and refinement of Large Language Models (LLMs) across 5+ high-impact projects, improving model accuracy and reliability while performing in-depth safety and bias assessments to ensure ethical, production-ready outputs.",
+              ]}
+              tags={["LLMs", "Model Evaluation", "AI Safety", "Bias Assessment"]}
+            />
+          </div>
+        </section>
+
+        <div className="my-10 sm:my-12 h-px bg-[rgb(var(--border))]" />
+
+         {/* Projects */}
         <section id="projects">
           <div className="flex items-center justify-between gap-4">
             <h2 className="text-xl font-semibold">Projects</h2>
@@ -91,34 +122,7 @@ export default function Home() {
           </div>
         </section>
 
-        <div className="my-10 sm:my-12 h-px bg-[rgb(var(--border))]" />
 
-        {/* Experience */}
-        <section id="experience">
-          <h2 className="text-xl font-semibold">Experience</h2>
-
-          <div className="mt-6 space-y-5">
-            <ExperienceCard
-              role="Software Engineer"
-              org="Charles Schwab"
-              date="2025 — Present"
-              bullets={[
-                "Working as a Software Developer focused on observability and reliability for large-scale distributed systems across on-prem and cloud environments, building Python-based telemetry pipelines that transformed infrastructure and service metrics into production dashboards and alerts using Grafana, Splunk, OpenTelemetry, and Wavefront.",
-              ]}
-              tags={["Python", "Observability", "Grafana", "Splunk", "Wavefront"]}
-            />
-
-            <ExperienceCard
-              role="AI Model Trainer"
-              org="Outlier AI"
-              date="2024"
-              bullets={[
-                "Contributed to the training, evaluation, and refinement of Large Language Models (LLMs) across 5+ high-impact projects, improving model accuracy and reliability while performing in-depth safety and bias assessments to ensure ethical, production-ready outputs.",
-              ]}
-              tags={["LLMs", "Model Evaluation", "AI Safety", "Bias Assessment"]}
-            />
-          </div>
-        </section>
 
         <div className="my-10 sm:my-12 h-px bg-[rgb(var(--border))]" />
 
