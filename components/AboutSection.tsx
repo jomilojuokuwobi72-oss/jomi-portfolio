@@ -22,7 +22,7 @@ export default function AboutSection() {
             {/* Profile image */}
             <div className="relative h-40 w-40 sm:h-44 sm:w-44 lg:h-56 lg:w-56">
               <Image
-                src="/Jomi2.JPG"
+                src="/Jomi-1.JPG"
                 alt="Jomi Okuwobi"
                 fill
                 className="rounded-full object-cover ring-1 ring-[rgb(var(--border))]"
