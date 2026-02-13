@@ -2,8 +2,8 @@
 import Image from "next/image";
 import { Brain, Eye } from "lucide-react";
 
-const techLeft = ["Python", "React.js", "JavaScript (ES6+)"];
-const techRight = ["TypeScript", "Node.js", "SQL"];
+const techLeft = ["Python", "React.js", "JavaScript (ES6+)", "Java / Spring Boot", "Git / GitHub"];
+const techRight = ["TypeScript", "Node.js", "SQL", "Docker", "AWS"];
 
 const vibeIcons = [
   { src: "/coffee.JPG", alt: "Coffee", rotate: "-rotate-6" },

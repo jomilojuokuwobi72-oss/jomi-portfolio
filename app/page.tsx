@@ -1,9 +1,9 @@
 // app/page.tsx
 "use client";
-import { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
 import AboutSection from "@/components/AboutSection";
 import OutsideWork from "@/components/OutsideWork";
+import Link from "next/link";
 
 type Project = {
   title: string;
@@ -15,6 +15,14 @@ type Project = {
 };
 
 const projects: Project[] = [
+  {
+    title: "worldMap",
+    meta: "2026",
+    desc: "Personalized travel share links with interactive map visualization",
+    longDesc:
+      "A full-stack application that lets you create personalized share links showcasing all the places you've visited. Interactive map visualization powered by Mapbox displays your travel locations, while PostgreSQL stores your travel data securely. Upload and manage travel memories with AWS S3 bucket integration.",
+    tags: ["Next.js", "TypeScript", "Mapbox", "PostgreSQL", "AWS S3"],
+  },
   {
     title: "Sports Injury Insight & Prevention",
     meta: "2025",
@@ -34,23 +42,6 @@ const projects: Project[] = [
 ];
 
 export default function Home() {
-  const [showProjectsModal, setShowProjectsModal] = useState(false);
-
-  useEffect(() => {
-    const onKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setShowProjectsModal(false);
-    };
-    window.addEventListener("keydown", onKeyDown);
-    return () => window.removeEventListener("keydown", onKeyDown);
-  }, []);
-
-  const openProjectsModal = (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
-    setShowProjectsModal(true);
-  };
-
-  const closeProjectsModal = () => setShowProjectsModal(false);
-
   return (
     <main className="min-h-screen">
       <Navbar />
@@ -60,8 +51,6 @@ export default function Home() {
         <AboutSection />
 
         <div className="my-10 sm:my-12 h-px bg-[rgb(var(--border))]" />
-
-    
 
         {/* Experience */}
         <section id="experience">
@@ -92,19 +81,18 @@ export default function Home() {
 
         <div className="my-10 sm:my-12 h-px bg-[rgb(var(--border))]" />
 
-         {/* Projects */}
+        {/* Projects */}
         <section id="projects">
           <div className="flex items-center justify-between gap-4">
             <h2 className="text-xl font-semibold">Projects</h2>
 
-            {/* View all -> opens modal */}
-            <button
-              type="button"
-              onClick={openProjectsModal}
+            {/* View all -> navigate to projects page */}
+            <Link
+              href="/projects"
               className="text-sm rounded-full px-3 py-1.5 ring-1 ring-[rgb(var(--border))] bg-[rgb(var(--card))] hover:opacity-90 transition"
             >
               View all →
-            </button>
+            </Link>
           </div>
 
           <div className="mt-6 space-y-5">
@@ -121,8 +109,6 @@ export default function Home() {
             ))}
           </div>
         </section>
-
-
 
         <div className="my-10 sm:my-12 h-px bg-[rgb(var(--border))]" />
 
@@ -146,50 +132,6 @@ export default function Home() {
           © {new Date().getFullYear()} Jomi Okuwobi
         </footer>
       </div>
-
-      {/* Modal */}
-      {showProjectsModal && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center px-4"
-          aria-labelledby="projects-modal-title"
-          role="dialog"
-          aria-modal="true"
-        >
-          {/* Backdrop */}
-          <button
-            type="button"
-            aria-label="Close modal"
-            onClick={closeProjectsModal}
-            className="absolute inset-0 bg-black/50"
-          />
-
-          {/* Panel */}
-          <div className="relative w-full max-w-lg rounded-2xl bg-[rgb(var(--card))] ring-1 ring-[rgb(var(--border))] p-6 shadow-lg">
-            <div className="flex items-start justify-between gap-4">
-              <div>
-                <h3
-                  id="projects-modal-title"
-                  className="text-lg font-semibold tracking-tight"
-                >
-                  More projects coming soon
-                </h3>
-                <p className="mt-2 text-[15px] leading-7 text-[rgb(var(--muted))]">
-                  I’m actively adding more projects and live links. Check back soon
-                  — or reach out if you’d like a demo in the meantime.
-                </p>
-              </div>
-
-              <button
-                type="button"
-                onClick={closeProjectsModal}
-                className="rounded-full px-2.5 py-1 text-sm ring-1 ring-[rgb(var(--border))] hover:opacity-90 transition"
-              >
-                Close
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
     </main>
   );
 }
