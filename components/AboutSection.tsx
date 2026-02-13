@@ -41,6 +41,11 @@ export default function AboutSection() {
             {/* Interests (replaces tech stack chips) */}
             <div className="mt-5 flex flex-wrap justify-center gap-3 lg:justify-start lg:max-w-xl">
               <span className="inline-flex items-center gap-2 rounded-full px-3 py-1.5 bg-[rgb(var(--chip))] ring-1 ring-[rgb(var(--border))] text-sm text-[rgb(var(--muted))] hover:-translate-y-0.5 transition-transform">
+                  <span className="font-mono text-[rgb(var(--fg))] opacity-80">⌘</span>
+                  Programming
+                </span>
+
+              <span className="inline-flex items-center gap-2 rounded-full px-3 py-1.5 bg-[rgb(var(--chip))] ring-1 ring-[rgb(var(--border))] text-sm text-[rgb(var(--muted))] hover:-translate-y-0.5 transition-transform">
                 <Brain className="h-4 w-4 text-[rgb(var(--fg))] opacity-80" />
                 Machine Learning
               </span>
@@ -58,11 +63,6 @@ export default function AboutSection() {
               <span className="inline-flex items-center gap-2 rounded-full px-3 py-1.5 bg-[rgb(var(--chip))] ring-1 ring-[rgb(var(--border))] text-sm text-[rgb(var(--muted))] hover:-translate-y-0.5 transition-transform">
                 <span className="font-mono text-[rgb(var(--fg))] opacity-80">✦</span>
                 UX / UI
-              </span>
-
-              <span className="inline-flex items-center gap-2 rounded-full px-3 py-1.5 bg-[rgb(var(--chip))] ring-1 ring-[rgb(var(--border))] text-sm text-[rgb(var(--muted))] hover:-translate-y-0.5 transition-transform">
-                <span className="font-mono text-[rgb(var(--fg))] opacity-80">⌘</span>
-                Programming
               </span>
             </div>
 
