@@ -2,7 +2,6 @@
 "use client";
 import Navbar from "@/components/Navbar";
 import AboutSection from "@/components/AboutSection";
-import OutsideWork from "@/components/OutsideWork";
 import Link from "next/link";
 
 type Project = {
@@ -108,13 +107,6 @@ export default function Home() {
               />
             ))}
           </div>
-        </section>
-
-        <div className="my-10 sm:my-12 h-px bg-[rgb(var(--border))]" />
-
-        {/* Outside Work */}
-        <section id="outside-work">
-          <OutsideWork />
         </section>
 
         <div className="my-10 sm:my-12 h-px bg-[rgb(var(--border))]" />

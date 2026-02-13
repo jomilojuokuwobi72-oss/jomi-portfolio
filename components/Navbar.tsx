@@ -3,6 +3,8 @@
 
 import { useEffect, useMemo, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import LiveClock from "@/components/LiveClock";
 import ThemeToggle from "@/components/ThemeToggle";
 
@@ -40,16 +42,17 @@ function HamburgerIcon({ open }: { open: boolean }) {
 }
 
 export default function Navbar() {
+  const pathname = usePathname();
+  const isProjectsPage = pathname === "/projects";
+
   const links: LinkItem[] = useMemo(
     () => [
-      { label: "Home", href: "#home" },
-      { label: "About", href: "#about" },
-      { label: "Projects", href: "#projects" },
-      { label: "Experience", href: "#experience" },
-      { label: "Outside Work", href: "#outside-work" },
-      { label: "Contact", href: "#contact" },
+      { label: "Home", href: isProjectsPage ? "/" : "#home" },
+      { label: "Projects", href: isProjectsPage ? "/#projects" : "#projects" },
+      { label: "Experience", href: isProjectsPage ? "/#experience" : "#experience" },
+      { label: "Contact", href: isProjectsPage ? "/#contact" : "#contact" },
     ],
-    []
+    [isProjectsPage]
   );
 
   const [open, setOpen] = useState(false);
@@ -67,16 +70,27 @@ export default function Navbar() {
   }, []);
 
   const handleNavClick = (e: React.MouseEvent, href: string, label: string) => {
-    e.preventDefault();
     setOpen(false);
 
     if (label.toLowerCase() === "contact") {
+      e.preventDefault();
       setContactOpen(true);
       return;
     }
 
+    // If it's a page navigation (starts with /)
+    if (href.startsWith("/")) {
+      return; // Let the Link component handle it
+    }
+
+    // If it's a hash link, scroll to it
     if (href.startsWith("#")) {
-      smoothScrollToId(href.slice(1));
+      e.preventDefault();
+      const targetId = href.slice(1);
+      // Wait a tick to ensure we're on the right page
+      setTimeout(() => {
+        smoothScrollToId(targetId);
+      }, 0);
     }
   };
 
@@ -96,16 +110,33 @@ export default function Navbar() {
 
             {/* CENTER (desktop links) */}
             <nav className="hidden md:flex justify-center items-center gap-8 lg:gap-10 text-sm">
-              {links.map((l) => (
-                <a
-                  key={l.href}
-                  href={l.href}
-                  onClick={(e) => handleNavClick(e, l.href, l.label)}
-                  className="text-[rgb(var(--muted))] hover:text-[rgb(var(--fg))] transition"
-                >
-                  {l.label}
-                </a>
-              ))}
+              {links.map((l) => {
+                const isPageNav = l.href.startsWith("/");
+                const isContact = l.label.toLowerCase() === "contact";
+
+                if (isPageNav) {
+                  return (
+                    <Link
+                      key={l.href}
+                      href={l.href}
+                      className="text-[rgb(var(--muted))] hover:text-[rgb(var(--fg))] transition"
+                    >
+                      {l.label}
+                    </Link>
+                  );
+                }
+
+                return (
+                  <a
+                    key={l.href}
+                    href={l.href}
+                    onClick={(e) => handleNavClick(e, l.href, l.label)}
+                    className="text-[rgb(var(--muted))] hover:text-[rgb(var(--fg))] transition"
+                  >
+                    {l.label}
+                  </a>
+                );
+              })}
             </nav>
 
             {/* RIGHT */}
@@ -130,16 +161,32 @@ export default function Navbar() {
             <div className="md:hidden pb-4">
               <div className="mt-2 rounded-2xl bg-[rgb(var(--card))] ring-1 ring-[rgb(var(--border))] p-3">
                 <div className="flex flex-col">
-                  {links.map((l) => (
-                    <a
-                      key={l.href}
-                      href={l.href}
-                      onClick={(e) => handleNavClick(e, l.href, l.label)}
-                      className="rounded-xl px-3 py-2 text-sm text-[rgb(var(--muted))] hover:text-[rgb(var(--fg))] hover:bg-black/5 dark:hover:bg-white/5 transition"
-                    >
-                      {l.label}
-                    </a>
-                  ))}
+                  {links.map((l) => {
+                    const isPageNav = l.href.startsWith("/");
+
+                    if (isPageNav) {
+                      return (
+                        <Link
+                          key={l.href}
+                          href={l.href}
+                          className="rounded-xl px-3 py-2 text-sm text-[rgb(var(--muted))] hover:text-[rgb(var(--fg))] hover:bg-black/5 dark:hover:bg-white/5 transition"
+                        >
+                          {l.label}
+                        </Link>
+                      );
+                    }
+
+                    return (
+                      <a
+                        key={l.href}
+                        href={l.href}
+                        onClick={(e) => handleNavClick(e, l.href, l.label)}
+                        className="rounded-xl px-3 py-2 text-sm text-[rgb(var(--muted))] hover:text-[rgb(var(--fg))] hover:bg-black/5 dark:hover:bg-white/5 transition"
+                      >
+                        {l.label}
+                      </a>
+                    );
+                  })}
                 </div>
               </div>
             </div>

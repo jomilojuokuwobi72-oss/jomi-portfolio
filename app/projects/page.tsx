@@ -3,6 +3,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { Github } from "lucide-react";
 import Navbar from "@/components/Navbar";
 
 type Project = {
@@ -43,7 +44,7 @@ const projects: Project[] = [
     meta: "2025",
     desc: "NLP-Powered Financial Search Tool",
     longDesc:
-      "Built an NLP-powered financial search tool that interprets free-text user queries and maps them to relevant stocks and ETFs, improving discoverability beyond traditional ticker-based search, achieving ~85–90% relevance accuracy based on user feedback.",
+      "Developed during a Schwab new hire company hackathon, an NLP-powered financial search tool that interprets free-text user queries and maps them to relevant stocks and ETFs, improving discoverability. Enables customers to find stocks and ETFs directly without needing to visit competitor platforms, improving retention and user engagement.",
     tags: ["Next.js", "Supabase", "Tailwind"],
   },
 ];
@@ -135,8 +136,9 @@ export default function ProjectsPage() {
                     href={featuredProject.codeHref}
                     target="_blank"
                     rel="noreferrer"
-                    className="underline underline-offset-4 hover:opacity-75 transition"
+                    className="inline-flex items-center gap-1.5 underline underline-offset-4 hover:opacity-75 transition"
                   >
+                    <Github className="h-4 w-4" />
                     Code
                   </a>
                 )}
@@ -197,12 +199,6 @@ export default function ProjectsPage() {
                         Live
                       </a>
                     )}
-                    <a className="underline underline-offset-4 hover:opacity-75 transition" href="#">
-                      Code
-                    </a>
-                    <a className="underline underline-offset-4 hover:opacity-75 transition" href="#">
-                      Case study
-                    </a>
                   </div>
                 </div>
               ))}
