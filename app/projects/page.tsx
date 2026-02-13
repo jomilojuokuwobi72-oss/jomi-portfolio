@@ -13,6 +13,7 @@ type Project = {
   tags: string[];
   image?: string;
   href?: string;
+  codeHref?: string;
   featured?: boolean;
 };
 
@@ -25,6 +26,8 @@ const projects: Project[] = [
       "A full-stack application that lets you create personalized share links showcasing all the places you've visited. Interactive map visualization powered by Mapbox displays your travel locations, while PostgreSQL stores your travel data securely. Upload and manage travel memories with AWS S3 bucket integration for seamless image hosting. Share your adventures with a unique, custom URL.",
     tags: ["Next.js", "TypeScript", "Mapbox", "PostgreSQL", "AWS S3"],
     image: "/worldmap-preview.png",
+    href: "https://world-map-peach.vercel.app",
+    codeHref: "https://github.com/jomilojuokuwobi72-oss/WorldMap",
     featured: true,
   },
   {
@@ -127,18 +130,16 @@ export default function ProjectsPage() {
                     Live
                   </a>
                 )}
-                <a
-                  href="#"
-                  className="underline underline-offset-4 hover:opacity-75 transition"
-                >
-                  Code
-                </a>
-                <a
-                  href="#"
-                  className="underline underline-offset-4 hover:opacity-75 transition"
-                >
-                  Case study
-                </a>
+                {featuredProject.codeHref && (
+                  <a
+                    href={featuredProject.codeHref}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="underline underline-offset-4 hover:opacity-75 transition"
+                  >
+                    Code
+                  </a>
+                )}
               </div>
             </div>
           </section>
